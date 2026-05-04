@@ -1,7 +1,7 @@
 //SISTEMA DE GERENCIAMENTO DE PERSONAGEM
 
 function calcularPontuacaoTotal(historicoDePontos){
-    const somarRodada = function(acumulador, pontosDeFase) {
+    const somarRodada = function(acumulador, pontosDaFase) {
         const novaSoma = acumulador + pontosDaFase;
         return novaSoma;
     };
@@ -26,8 +26,22 @@ function atualizarInventario(inventárioAtual, acao, nomeDoItem) {
     if(acao ==="pegar") {
         const inventarioComItemNovo = [inventarioAtual, nomeDoItem];
         novoInventario = inventarioComItemNovo;
-    } else if (acao === "descartar")
-}
+    } else if (acao === "descartar") {
+        const inventarioSemUltimoItem = inventárioAtual.slice();
+        novoInventario = inventarioSemUltimoItem;
+    } else {
+        novoInventario = inventárioAtual
+    }
+    return novoInventario;
+};
 
-const pontosDoJogador = [100, 50, 200, 10]
-console.log(pontosDoJogador);
+const pontosDoJogador = [100, 50, 250, 10]
+const total = calcularPontuacaoTotal(pontosDoJogador);
+console.log("ppntuação final: ", total);
+
+const missoes = [
+    {nome: "Salvar a aldeia", status: "concluida"},
+    {nome: "encontrar o mapa", status: "em andamento"},
+    {nome: "derrotar o chefão", status: "falhou"},
+    {nome: "coletar recursos", status: "concluida"},
+]
