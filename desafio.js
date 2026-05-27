@@ -14,8 +14,17 @@ console.log(`O preço final da compra é de ${resultado}`);
 
 const preco = 100;
 const quantidadeProduto = 20;
-const valorCompra = 500;
+const valorCompra = 480;
 console.log(`Um cliente quer levar ${preco}, coneguiu ${quantidadeProduto}`);
 console.log(`Com desconto o valor total a compra ficaria ${valorCompra}`);
 console.log(`Se o produto estiver em promoção o produto estará com ${descontoProduto}`);
 console.log(`Se o produto estiver sem estoque o ${quantidadeProduto} estará em zero.`);
+
+const totalCompra = 480;
+
+function totalCompra(verificarCompra) {
+    const foiFinalizada = compra.status === "concluida";
+    return foiFinalizada;
+console.log(`A compra foi finalizada com o total  ${totalCompra} reais.`);
+}
+
